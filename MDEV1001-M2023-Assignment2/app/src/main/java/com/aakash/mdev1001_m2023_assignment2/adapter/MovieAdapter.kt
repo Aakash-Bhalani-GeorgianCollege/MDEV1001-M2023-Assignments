@@ -43,11 +43,11 @@ open class MovieAdapter(
         val movie = movieList[position]
         holder.titleTextView.text = movie.title
         if (movie.criticsRating > 7) {
-            holder.ratingTextView.setTextColor(ContextCompat.getColor(context, R.color.green))
+            holder.ratingTextView.setTextColor(ContextCompat.getColor(context, R.color.colorGreen))
         } else if (movie.criticsRating > 5) {
-            holder.ratingTextView.setTextColor(ContextCompat.getColor(context, R.color.yellow))
+            holder.ratingTextView.setTextColor(ContextCompat.getColor(context, R.color.colorYellow))
         } else {
-            holder.ratingTextView.setTextColor(ContextCompat.getColor(context, R.color.red))
+            holder.ratingTextView.setTextColor(ContextCompat.getColor(context, R.color.colorRed))
         }
         holder.ratingTextView.text = movie.criticsRating.toString()
 

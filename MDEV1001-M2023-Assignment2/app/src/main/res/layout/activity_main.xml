@@ -17,7 +17,7 @@
             android:layout_marginTop="20dp"
             android:gravity="start"
             android:text="@string/movies"
-            android:textColor="@color/white"
+            android:textColor="@color/colorWhite"
             android:textSize="32sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="parent"
@@ -50,7 +50,7 @@
             android:foreground="?attr/selectableItemBackground"
             android:gravity="center|center_vertical"
             android:src="@drawable/ic_add"
-            android:textColor="@color/black"
+            android:textColor="@color/colorBlack"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>

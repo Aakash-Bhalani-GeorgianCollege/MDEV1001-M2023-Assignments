@@ -3,7 +3,7 @@
     <style name="Base.Theme.MDEV1001M2023Assignment2" parent="Theme.Material3.Dark.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/black</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/colorBlack</item>
 
     </style>
 </resources>

@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
     android:orientation="vertical"
-    app:cardBackgroundColor="@color/gray"
+    app:cardBackgroundColor="@color/colorGray"
     app:cardCornerRadius="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -55,7 +55,7 @@
                 android:gravity="start"
                 android:singleLine="true"
                 android:text="Pirates of the Caribbean: The Curse of the Black Pearl"
-                android:textColor="@color/white"
+                android:textColor="@color/colorWhite"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
