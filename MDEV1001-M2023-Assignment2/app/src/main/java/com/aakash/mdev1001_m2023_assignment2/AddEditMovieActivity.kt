@@ -127,7 +127,6 @@ class AddEditMovieActivity : AppCompatActivity() {
 
         if(requestCode==101&&resultCode== RESULT_OK){
             mBinding.imgMovieThumb.setImageURI(data?.data)
-            Log.i("ImagePath",data?.data.toString())
             imagePath = data?.data.toString()
         }
 
