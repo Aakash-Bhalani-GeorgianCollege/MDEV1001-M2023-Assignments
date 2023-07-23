@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initView() {
         mBinding.imgSearch.setOnClickListener {
+            movieList.clear()
             getMovieList(mBinding.edtSearchView.text.toString())
         }
     }
