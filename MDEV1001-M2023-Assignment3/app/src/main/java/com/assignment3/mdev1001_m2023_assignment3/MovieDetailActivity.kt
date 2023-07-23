@@ -28,5 +28,11 @@ class MovieDetailActivity : AppCompatActivity() {
         mBinding.txtGenreVal.text = movieObj.Genre
         mBinding.txtReleaseDateVal.text = movieObj.Released
         mBinding.txtIMDBRatingVal.text = movieObj.imdbRating
-    }
+        mBinding.txtCountryVal.text = movieObj.Country
+        mBinding.txtLanguageVal.text = movieObj.Language
+
+        mBinding.imgBack.setOnClickListener {
+            finish()
+        }
+     }
 }
