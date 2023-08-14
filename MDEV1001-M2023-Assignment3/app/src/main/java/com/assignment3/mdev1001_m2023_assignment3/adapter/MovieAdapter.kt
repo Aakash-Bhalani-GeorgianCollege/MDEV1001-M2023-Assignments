@@ -44,6 +44,7 @@ open class MovieAdapter(
         }*/
         holder.ratingTextView.text = movie.imdbRating.toString()
         holder.yearTextView.text = movie.Year.toString()
+        holder.studioTextView.text = movie.Director.toString()
 
 
 
@@ -73,6 +74,7 @@ open class MovieAdapter(
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val ratingTextView: TextView = itemView.findViewById(R.id.txtCritRating)
         val titleTextView: TextView = itemView.findViewById(R.id.txtMovieTitleVal)
+        val studioTextView: TextView = itemView.findViewById(R.id.txtMovieStudio)
         val yearTextView: TextView = itemView.findViewById(R.id.txtYear)
         val imgThumbnail: ImageView = itemView.findViewById(R.id.imgThumbnail)
         val imgRightArrow: ImageView = itemView.findViewById(R.id.imgRightArrow)
