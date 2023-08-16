@@ -38,40 +38,61 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:padding="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/imgThumbnail">
 
             <TextView
                 android:id="@+id/txtMovieTitleVal"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:gravity="start"
                 android:singleLine="true"
                 android:text="Pirates of the Caribbean: The Curse of the Black Pearl"
                 android:textColor="@color/colorWhite"
-                android:textSize="16sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/txtCritRating"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:gravity="center_horizontal"
-                android:text="0.0"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imgThumbnail">
+
+                <TextView
+                    android:id="@+id/txtStudio"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:singleLine="true"
+                    android:text="Marvel Studios"
+                    android:textColor="#B3B3B3"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
 
+                <TextView
+                    android:id="@+id/txtCritRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_horizontal"
+                    android:text="0.0"
+                    android:textColor="#B3B3B3"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
         </LinearLayout>
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.assignment.mdev1001_m2023_assignment4.AddEditMovieActivity
 import com.assignment.mdev1001_m2023_assignment4.firebase.FirebaseController
@@ -39,10 +40,11 @@ open class MovieAdapter(
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val documentSnapshot = movieList[position]
         val movie: Movie = documentSnapshot.toObject(Movie::class.java)!!
-
+        Log.i("CRITICRATING",movie.criticsRating.toString())
         holder.ratingTextView.text = movie.criticsRating.toString()
 
         holder.titleTextView.text = movie.title
+        holder.txtStudio.text = movie.studio
 
         holder.imgDelete.setOnClickListener {
             firebaseController.deleteMovie(db, "movies", documentSnapshot.id) {
@@ -59,23 +61,20 @@ open class MovieAdapter(
         Glide.with(context).load(movie.movieThumbnail).into(holder.imgThumbnail)
 
         holder.itemView.setOnClickListener {
-            val gson = Gson()
-            val userObj = gson.toJson(movie)
-            context.startActivity(
-                Intent(context, AddEditMovieActivity::class.java).putExtra(
-                    "TYPE",
-                    "UPDATE"
-                ).putExtra("MOVIEOBJ", userObj)
-            )
+            onClick(position,movie,documentSnapshot.id)
+
         }
 
     }
 
+    open fun onClick(position: Int,movie: Movie,documentId:String){
 
+    }
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val ratingTextView: TextView = itemView.findViewById(R.id.txtCritRating)
         val titleTextView: TextView = itemView.findViewById(R.id.txtMovieTitleVal)
+        val txtStudio: TextView = itemView.findViewById(R.id.txtStudio)
         val imgDelete: ImageView = itemView.findViewById(R.id.imgDelete)
         val imgThumbnail: ImageView = itemView.findViewById(R.id.imgThumbnail)
     }

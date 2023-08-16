@@ -12,7 +12,7 @@ data class Movie(
     var shortDescription: String,
     var mpaRating: String,
     var criticsRating: Double,
-    val movieThumbnail: String
+    var movieThumbnail: String
 ) {
     constructor() : this(
         "", "", emptyList(), emptyList(), emptyList(), emptyList(),

@@ -1,12 +1,17 @@
 package com.assignment.mdev1001_m2023_assignment4.firebase
 
 import android.app.Activity
+import android.net.Uri
 import android.util.Log
+import androidx.core.net.toUri
 import com.assignment.mdev1001_m2023_assignment4.entity.Movie
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import java.io.File
 
 class FirebaseController {
 
@@ -136,6 +141,27 @@ class FirebaseController {
             .addOnFailureListener { exception ->
                 function(false)
             }
+
+    }
+
+    fun uploadImage(storageRef: StorageReference, path: String,function: (String?,Boolean) -> Unit){
+        val fileReference = storageRef.child("images/${System.currentTimeMillis()}")
+
+        val uploadTask = fileReference.putFile(path.toUri())
+
+        uploadTask.addOnSuccessListener {
+            // File uploaded successfully
+
+            // Get the download URL
+            fileReference.downloadUrl.addOnSuccessListener { uri ->
+                val downloadUrl = uri.toString()
+                function(downloadUrl,true)
+            }.addOnFailureListener {
+                function("",false)
+            }
+        }.addOnFailureListener {
+            function("",false)
+        }
 
     }
 
