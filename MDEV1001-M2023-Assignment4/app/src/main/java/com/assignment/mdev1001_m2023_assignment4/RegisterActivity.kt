@@ -1,5 +1,6 @@
 package com.assignment.mdev1001_m2023_assignment4
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
 import android.widget.Toast
@@ -90,6 +91,8 @@ class RegisterActivity : AppCompatActivity() {
         ) {
             if (it) {
                 Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
             } else {
                 Toast.makeText(this, "Registration Failed", Toast.LENGTH_SHORT).show()
             }
